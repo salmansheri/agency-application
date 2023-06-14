@@ -2,26 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.dark {
+    @apply bg-zinc-900 text-neutral-200; 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.light {
+    @apply bg-white text-black; 
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.theme {
+    @apply transition-all duration-1000 ease-in;
 }
+
+body,
+html {
+    @apply max-w-[100vw] overflow-x-hidden bg-[#111] text-[#bbb]
+}
+
+.image {
+    animation: move 3s infinite ease alternate; 
+     
+}
+
+@keyframes move {
+    from {
+        transform: translateY(-15px); 
+
+    }
+    to {
+        transform: translateY(0px) scale(1.03); 
+    }
+}
+
+.item {
+    @apply border-[5px] border-solid rounded-[5px] w-[300px] h-[400px] relative bg-cover; 
+
+
+}
+
+.item:nth-child(1) {
+    @apply bg-[url("/images/illustration.png")]; 
+}
+.item:nth-child(2) {
+    @apply bg-[url("/images/websites.jpg")]; 
+}
+.item:nth-child(3) {
+    @apply bg-[url("/images/apps.jpg")]; 
+}
+
+.item:nth-child(2) {
+
+}
+
+.title {
+    @apply absolute right-2 bottom-2 text-[40px] font-bold 
+
+}
+
+.item:hover .title {
+    @apply text-[#53c28b];
+}
+
+
