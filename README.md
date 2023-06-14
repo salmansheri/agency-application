@@ -2,7 +2,7 @@
 
 
 ```command
-git clone ---repository url---
+git clone https://github.com/salmansheri/agency-application.git
 
 ```
 
